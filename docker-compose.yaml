@@ -1,4 +1,5 @@
 # write your docker-compose code here.Use the `docker compose` command instead of the legacy `docker-compose`, as it is integrated into Docker CLI (v20.10+),eliminating the need for a separate binary. It provides better performance, consistency, and is actively maintained, unlike the legacy command.
+version: "3.9"
 services:
   todo-application:
     image: todo-application-image:latest
@@ -10,7 +11,7 @@ services:
     networks:
       - todo-network
 
-  mysql-db:
+  mysql-db-1:
     image: mysql:8.0
     container_name: mysql-db-1
     environment:
