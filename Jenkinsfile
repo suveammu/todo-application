@@ -30,15 +30,15 @@ pipeline {
         }
         stage('Docker Push') {
             steps {
-                withCRedentials([usernamePassword(
+                withCredentials([usernamePassword(
                     credentialsId: 'docker-hub-credentials',
-                    usernameVariable: 'suve11',
-                    passwordVariable: 'Dhaaru@mmu11'
+                    usernameVariable: 'DOCKER_USER',
+                    passwordVariable: 'DOCKER_PASS'
                 )])
                  {   
                     sh '''
-                       docker login -u $suve11 --password-stdin
-                      docker push $suve11/$todo_application_image:latest
+                      docker login -u $DOCKER_USER --p $DOCKER_PASS
+                      docker push suve11/$todo-application-image:latest
                     '''
                 }
             }
