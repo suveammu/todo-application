@@ -4,7 +4,7 @@ services:
     image: todo-application-image:latest
     container_name: todo-application-1
     ports:
-      - "8082:8081"
+      - "8083:8081"
     depends_on:
       - mysql-db
     networks:
