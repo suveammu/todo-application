@@ -5,7 +5,6 @@ pipeline {
         DOCKER_HUB_PASSWORD = 'Dhaaru@mmu11'
         APP_NAME = 'todo-application-image'
         APP_PORT = '8082'*/
-    }
     stages {
 
         stage('clone repository'){
